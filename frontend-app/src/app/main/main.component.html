@@ -1,0 +1,39 @@
+<div class="main">
+  <nav class="main__nav">
+    <h1 class="main__nav-title">Encuentralo facil</h1>
+    <input type="text" class="main__search" placeholder="Buscar">
+    <div class="main__links">
+      <a href="#" class="main__nav-link">Ofertas</a>
+      <a href="#" class="main__nav-link">Pedidos</a>
+      <a href="#" class="main__nav-link">Mi cuenta</a>
+    </div>
+  </nav>
+  <div class="main__sidebar">
+    <ul class="main__categories">
+      <li class="main__category-item" *ngFor="let category of categories">
+        <a class="main__category-link" (click)="onLinkClick(category.id)">{{category.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="main__products">
+    <div class="main__products-list">
+      <app-product-card *ngFor="let product of products" [product]="product" (click)="onProductClick(product)">
+      </app-product-card>
+    </div>
+  </div>
+  <div class="main__cart">
+    <h3 class="main__cart-title">Carrito de compra</h3>
+    <div class="main__cart-list">
+      <div class="main__cart-item" *ngFor="let item of cartItems">
+        <p>{{item.quantity}} x {{item.name}}</p>
+        <p class="main__cart-item-price">{{item.price*item.quantity}}</p>
+        <button mat-icon-button color="warn" (click)="onDeleteItem(item.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <button mat-raised-button color="primary">
+      Finalizar compra
+    </button>
+  </div>
+</div>
