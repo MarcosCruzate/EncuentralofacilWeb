@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Leche Gloria",
-      "price": 3.6,
+      "price": 5.0,
       "description": "300ml",
       "category": "lacteos",
       "image": "https://plazavea.vteximg.com.br/arquivos/ids/345002-1000-1000/949.jpg"
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "name": "Yogurt Gloria",
-      "price": 3.6,
+      "price": 4.6,
       "description": "300ml",
       "category": "lacteos",
       "image": "https://www.gloria.com.pe/uploads/products/yogurt-fresa-tradicional.jpg"
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "Detergente Ace",
-      "price": 3.6,
+      "price": 1.2,
       "description": "300ml",
       "category": "detergentes",
       "image": "https://tofuu.getjusto.com/orioneat-prod/dkrWfRDe9yQvMQxeA-ACE-DETERGENTE-X-500-GR..jpg"
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "name": "Aceite Primor",
-      "price": 3.6,
+      "price": 8.0,
       "description": "300ml",
       "category": "aceites",
       "image": "https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/42757360_1-CTmGlp_O.jpg"
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "name": "Chorizo Braedt",
-      "price": 3.6,
+      "price": 4.6,
       "description": "300ml",
       "category": "embutidos",
       "image": "https://plazavea.vteximg.com.br/arquivos/ids/2446126-1000-1000/20041551.jpg"
@@ -51,10 +51,26 @@
     {
       "id": 7,
       "name": "Hotdog Otto Kunz",
-      "price": 3.6,
+      "price": 5.2,
       "description": "300ml",
       "category": "embutidos",
       "image": "https://plazavea.vteximg.com.br/arquivos/ids/2446532-1000-1000/20064845.jpg?v=637677656915100000"
+    },
+    {
+      "id": 8,
+      "name": "Detergente marsella",
+      "price": 1.7,
+      "description": "300ml",
+      "category": "detergentes",
+      "image": "https://promart.vteximg.com.br/arquivos/ids/567795-1000-1000/120875.jpg?v=637393515896900000"
+    },
+    {
+      "id": 9,
+      "name": "Aceite de oliva",
+      "price": 13.0,
+      "description": "300ml",
+      "category": "aceites",
+      "image": "https://plazavea.vteximg.com.br/arquivos/ids/553594-1000-1000/20046703.jpg?v=637426557178300000"
     }
   ],
   "categories": [
