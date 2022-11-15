@@ -1,6 +1,8 @@
 package com.encuentralofacil.encuentralofacil.services;
 
 import com.encuentralofacil.encuentralofacil.entities.Store;
+import com.encuentralofacil.encuentralofacil.entities.StoreProduct;
+import com.encuentralofacil.encuentralofacil.repositories.StoreProductRepository;
 import com.encuentralofacil.encuentralofacil.repositories.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,8 @@ import java.util.Optional;
 public class StoreService {
     @Autowired
     private StoreRepository storeRepository;
+    @Autowired
+    private StoreProductRepository storeProductRepository;
 
     public void createStore(Store store) {
         this.storeRepository.save(store);
