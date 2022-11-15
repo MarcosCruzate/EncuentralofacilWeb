@@ -3,6 +3,7 @@ package com.encuentralofacil.encuentralofacil.controllers;
 import com.encuentralofacil.encuentralofacil.dto.StoreAuthDTO;
 import com.encuentralofacil.encuentralofacil.entities.Client;
 import com.encuentralofacil.encuentralofacil.entities.Store;
+import com.encuentralofacil.encuentralofacil.entities.StoreProduct;
 import com.encuentralofacil.encuentralofacil.services.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
