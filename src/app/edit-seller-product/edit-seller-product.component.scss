@@ -1,0 +1,9 @@
+.edit-seller-product {
+  max-width: 800px;
+  margin: auto;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}

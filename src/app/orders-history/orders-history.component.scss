@@ -1,0 +1,14 @@
+.orders-history {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  table {
+    width: 100%;
+  }
+}

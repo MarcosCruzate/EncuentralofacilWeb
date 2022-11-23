@@ -1,0 +1,36 @@
+<div class="new-seller-product">
+  <h2>Registrar producto en inventario</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="new-seller-product__form">
+      <mat-form-field>
+        <mat-label>Producto</mat-label>
+        <mat-select formControlName="productId">
+          <mat-option *ngFor="let product of products" [value]="product.id">
+            {{ product.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Cantidad</mat-label>
+        <input
+          matInput
+          name="quantity"
+          formControlName="quantity"
+          type="number"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" name="price" formControlName="price" />
+      </mat-form-field>
+    </div>
+    <div class="new-seller-product__form-actions">
+      <button type="button" mat-button (click)="onCancelClick()">
+        Cancelar
+      </button>
+      <button type="submit" mat-raised-button color="primary">
+        Registrar
+      </button>
+    </div>
+  </form>
+</div>
