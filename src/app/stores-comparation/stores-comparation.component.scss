@@ -1,0 +1,50 @@
+.store-comparation {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 1rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  &__card {
+    padding: 1rem;
+    background-color: white;
+  }
+
+  &__card-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: -1.5;
+    margin: 1rem 0 .2rem 0;
+  }
+
+  &__price {
+    margin: 1rem 0;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price-accent {
+    font-weight: 600;
+  }
+
+  &__card-image-container {
+    display: grid;
+    place-items: center;
+  }
+
+  &__card-image {
+    height: 100px;
+    width: 100px;
+  }
+
+  &__pick-button {
+    width: 100%;
+  }
+}

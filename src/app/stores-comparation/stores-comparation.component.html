@@ -1,0 +1,28 @@
+<div class="store-comparation">
+  <h2>Compare precios</h2>
+  <div class="store-comparation__list">
+    <mat-card class="store-comparation__card" *ngFor="let store of stores">
+      <div class="store-comparation__card-image-container">
+        <img
+          class="store-comparation__card-image"
+          src="https://ui-avatars.com/api/?name={{
+            store.storeName
+          }}&background=3f51b5&color=fff"
+          alt=""
+        />
+      </div>
+      <div>
+        <h3 class="store-comparation__card-title">{{ store.storeName }}</h3>
+        <p class="store-comparation__price">
+          <span>Total</span>
+          <span class="store-comparation__price-accent"
+            >S/. {{ store.totalPrice }}</span
+          >
+        </p>
+        <button class="store-comparation__pick-button" mat-raised-button color="primary" (click)="selectStore(store.storeId)">
+          Escoger
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

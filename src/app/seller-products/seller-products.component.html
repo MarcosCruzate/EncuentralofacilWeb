@@ -1,0 +1,21 @@
+<div class="seller-products">
+  <h2>Lista de productos</h2>
+  <div class="seller-products__actions">
+    <a routerLink="/seller/products/new" mat-raised-button color="primary">Nuevo</a>
+  </div>
+  <div class="seller-products__list">
+    <div class="seller-products__card" *ngFor="let s of sellerProducts">
+      <span>Producto #{{s.productId}}</span>
+      <span>Cantidad: {{s.quantity}}</span>
+      <span>Precio unitario: {{s.price}}</span>
+      <div class="seller-products__card-actions">
+        <a routerLink="/seller/products/edit/{{s.id}}" mat-icon-button color="primary">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <!-- <a (click)="deleteStoreProduct(s.id)" mat-icon-button color="warn">
+          <mat-icon>delete</mat-icon>
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>
