@@ -1,7 +1,19 @@
 .register {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 60% 1fr;
   min-height: 100vh;
+
+  &__image-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
 
   &__form-section {
     display: grid;
