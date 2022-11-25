@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +17,14 @@ export class SellerService {
       email,
       password,
     });
+  }
+
+  public update(id: string | number, user: any) {
+    return this.http.put(`http://localhost:8080/stores/${id}`, user).pipe(
+      tap(() => {
+        this.setUser(user);
+      })
+    );
   }
 
   public setUser(user: any) {
