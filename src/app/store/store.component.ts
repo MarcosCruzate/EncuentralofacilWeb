@@ -4,6 +4,7 @@ import { Category } from 'src/models/Category';
 import { Product, ProductCartItem } from 'src/models/Product';
 import { districts } from '../constants/districts';
 import { CartService } from '../services/cart.service';
+import { DistrictService } from '../services/district.service';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -16,16 +17,20 @@ export class StoreComponent implements OnInit {
   categories: Array<Category> = [];
   cartItems: Array<ProductCartItem> = [];
   districts = districts;
+  selectedDistrict = '';
 
   constructor(
     private productsService: ProductsService,
     private cartService: CartService,
+    public districtService: DistrictService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.selectedDistrict = this.districtService.district;
+
     this.productsService
-      .getProductsCatalogueByDistrict('surco')
+      .getProductsCatalogueByDistrict(this.selectedDistrict)
       .subscribe((products) => (this.products = products));
 
     this.productsService
@@ -42,16 +47,14 @@ export class StoreComponent implements OnInit {
 
   onLinkClick(categoryId: string) {
     this.productsService
-      .getProductsCatalogueByDistrict('surco', categoryId)
+      .getProductsCatalogueByDistrict(this.selectedDistrict, categoryId)
       .subscribe((products) => (this.products = products));
   }
 
   onProductClick(product: Product) {
     const cartItems = [...this.cartItems];
 
-    const itemIndex = cartItems.findIndex(
-      (item) => item.id === product.id
-    );
+    const itemIndex = cartItems.findIndex((item) => item.id === product.id);
 
     if (itemIndex !== -1) {
       cartItems[itemIndex].quantity += 1;
@@ -71,5 +74,13 @@ export class StoreComponent implements OnInit {
 
   goToCompare() {
     this.router.navigateByUrl('/store/compare');
+  }
+
+  onDistrictChange({ value }: any) {
+    this.districtService.district = value;
+    this.cartService.setCartItems([]);
+    this.productsService
+      .getProductsCatalogueByDistrict(value)
+      .subscribe((products) => (this.products = products));
   }
 }

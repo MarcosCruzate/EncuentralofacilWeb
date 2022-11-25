@@ -1,0 +1,37 @@
+<section class="edit-seller">
+  <div class="edit-seller__form-card">
+    <h2>Mi cuenta</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+      <div class="edit-seller__form">
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput name="name" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Distrito</mat-label>
+          <mat-select name="district" formControlName="district">
+            <mat-option *ngFor="let district of districts" [value]="district">
+              {{ district }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput name="email" formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            type="password"
+            name="password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </div>
+      <div class="edit-seller__form-actions">
+        <button type="submit" mat-raised-button color="primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</section>

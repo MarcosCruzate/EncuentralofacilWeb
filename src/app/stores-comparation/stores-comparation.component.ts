@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductCartItem } from 'src/models/Product';
 import { CartService } from '../services/cart.service';
+import { DistrictService } from '../services/district.service';
 import { OrdersService } from '../services/orders.service';
 import { ProductsService } from '../services/products.service';
 
@@ -17,16 +18,17 @@ export class StoresComparationComponent implements OnInit {
   constructor(
     private router: Router,
     private cartService: CartService,
-    private orderService: OrdersService
+    private orderService: OrdersService,
+    private districtService: DistrictService,
   ) {}
 
   ngOnInit(): void {
+    const district = this.districtService.district;
     this.cartService.currentCartItems.subscribe((items) => {
       const cartItems = items.map((i) => ({
         productId: i.id,
         quantity: i.quantity,
       }));
-      const district = 'surco';
 
       this.orderService
         .getComparison(cartItems, district)

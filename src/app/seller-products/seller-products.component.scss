@@ -14,15 +14,51 @@
 
   &__card {
     display: flex;
-    align-items: center;
-    // justify-content: space-between;
     padding: 1rem;
     border-radius: 8px;
     background-color: white;
     gap: 1rem;
   }
 
+  &__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
   &__card-actions {
     margin-left: auto;
+  }
+
+  &__card-text {
+    font-size: 1rem;
+    font-weight: 300;
+
+    &__accent {
+      font-weight: 500;
+    }
+  }
+
+  &__image-wrapper {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 }

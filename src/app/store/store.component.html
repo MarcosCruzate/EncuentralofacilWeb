@@ -14,7 +14,7 @@
       <p class="store__subtitle">Elige tu distrito</p>
       <mat-form-field>
         <mat-label>Distrito</mat-label>
-        <mat-select>
+        <mat-select [value]="districtService.district" (selectionChange)="onDistrictChange($event)">
           <mat-option *ngFor="let district of districts" [value]="district">
             {{ district }}
           </mat-option>
